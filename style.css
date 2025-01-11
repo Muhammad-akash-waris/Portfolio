@@ -1,0 +1,459 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Roboto', Arial, sans-serif; /* Updated typography */
+    background: linear-gradient(135deg, #1f1c2c, #1e1e2f);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Header Styling */
+header {
+    background-color: #333;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: sticky;
+    top: -10px;
+    z-index: 1000;
+    width: 100%;
+}
+
+/* General Dropdown Menu Styling */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 50px;
+    background-color: #222;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    width: 200px;
+    z-index: 1000;
+    padding: 6px 1px;
+    transition: visibility 0.3s ease, opacity 0.3s ease;
+    opacity: 0; /* Default hidden state */
+    visibility: hidden; /* Hide for screen readers */
+}
+
+/* Show Menu */
+.dropdown-menu.show {
+    display: block;
+    opacity: 1;
+    visibility: visible; /* Show menu */
+}
+
+/* Menu Items */
+.dropdown-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: #3E3E3E;
+    border: none;             /* Remove border */
+    padding: 0;               /* Remove padding */
+}
+
+.dropdown-menu ul li {
+    padding: 12px 20px;
+    font-size: 16px;
+    color: white;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-menu ul li:hover {
+    background-color: #444;
+    color: #FFD700;
+}
+
+.dropdown-menu ul li a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+/* Menu Container */
+.menu-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Menu Icon */
+.menu-icon {
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.menu-icon:hover {
+    background-color: #444;
+}
+
+/* Small Screen Adjustments */
+@media screen and (max-width: 768px) {
+    .dropdown-menu {
+        width: 100%; /* Full width for smaller screens */
+        right: 0;
+        top: 60px; /* Adjust position for mobile */
+    }
+
+    .dropdown-menu ul li {
+        padding: 10px 15px; /* Adjust padding for smaller screens */
+        font-size: 14px; /* Reduce font size */
+    }
+}
+
+/* Very Small Devices */
+@media screen and (max-width: 480px) {
+    .dropdown-menu {
+        padding: 4px 0; /* Minimize padding */
+    }
+
+    .dropdown-menu ul li {
+        padding: 8px 12px; /* Compact list items */
+        font-size: 12px; /* Smaller font for very small screens */
+    }
+
+    .menu-icon {
+        font-size: 20px; /* Smaller icon */
+        padding: 8px; /* Compact icon padding */
+    }
+}
+
+
+/* Body Text */
+.projects-container h1 {
+    margin-bottom: 30px;
+    text-align: left; /* Updated for responsiveness */
+    margin-left: -500px;
+    margin-top: 70px;
+    font-size: 2rem;
+    color: #fff;
+}
+
+/* Button Focus State */
+button:focus, .read-more-btn:focus, .close-btn:focus {
+    outline: 2px dashed #FFD700; /* Added visible focus */
+    outline-offset: 3px;
+}
+
+/* Dark Mode Button */
+button#dark-mode-toggle {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+button#dark-mode-toggle:focus {
+    outline: none;
+}
+
+/* Home Section */
+.home-container {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.home-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.home-container p {
+    font-size: 1.2rem;
+}
+
+#animated-text {
+    font-size: 2.5em; /* Default for larger screens */
+    color: whitesmoke;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid #0078d7;
+    animation: typing 4s steps(30, end), blink-caret 0.7s step-end infinite;
+}
+
+/* Responsiveness for tablets */
+@media screen and (max-width: 1024px) {
+    #animated-text {
+        font-size: 2em; /* Slightly smaller for tablets */
+    }
+}
+
+/* Responsiveness for smartphones */
+@media screen and (max-width: 768px) {
+    #animated-text {
+        font-size: 1.8em; /* Smaller font size for smaller screens */
+        border-right: 1.5px solid #0078d7; /* Thinner border for smaller screens */
+    }
+}
+
+/* Responsiveness for very small screens */
+@media screen and (max-width: 480px) {
+    #animated-text {
+        font-size: 1.5em; /* Further reduce font size for very small devices */
+        border-right: 1px solid #0078d7; /* Thinnest border */
+        animation: typing 5s steps(20, end), blink-caret 1s step-end infinite; /* Slow down animation */
+    }
+}
+
+/* Keyframes for typing animation */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* Keyframes for blinking caret */
+@keyframes blink-caret {
+    from,
+    to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: orange;
+    }
+}
+
+/* Project Card Styles */
+.project-card {
+    background-color: #222;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    background-color: #333;
+}
+
+.project-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #ff9900;
+}
+
+.project-card p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #ddd;
+}
+
+.project-card a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 15px;
+    background-color: #ff9900;
+    color: #222;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.project-card a:hover {
+    background-color: #ffcc66;
+    color: #111;
+}
+
+.project-details {
+    display: none;
+    margin-top: 10px;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.project-card .read-more-btn:hover {
+    background-color: #FFD700;
+}
+
+.project-card .close-btn:hover {
+    background-color: #666;
+}
+
+@media screen and (max-width: 480px) { /* Small phones */
+    .dropdown-menu {
+        width: 100%;
+        right: 0;
+    }
+}
+
+@media screen and (max-width: 1024px) { /* Larger tablets */
+    .dropdown-menu {
+        width: 90%;
+        right: 5%;
+    }
+}
+@media (hover: none) and (pointer: coarse) {
+    .dropdown-menu ul li {
+        padding: 16px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .dropdown-menu {
+        max-height: 300px;
+        overflow-y: auto; /* Allow scrolling if content overflows */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .projects-container h1 {
+        margin-left: 0;
+        font-size: 1.5rem;
+    }
+    .project-card {
+        margin: 10px 0;
+    }
+}
+
+/* Contact Section */
+.contact-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.contact-container h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #FFD700;
+}
+
+.contact-container p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.social-icons .icon {
+    color: white;
+    font-size: 40px;
+    text-decoration: none;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.social-icons .icon:hover {
+    transform: scale(1.2);
+}
+.icon.github:hover {
+    color: #6cc644;
+}
+
+.icon.instagram:hover {
+    color: #e1306c;
+}
+
+.icon.email:hover {
+    color:#FBBC05;
+}
+
+.icon.linkedin:hover {
+    color: #0e76a8;
+}
+
+footer {
+    margin-top: 40px;
+    font-size: 0.9em;
+    text-align: center;
+    color: #CCCCCC;
+}
+
+/* General About Section Styling */
+#about {
+    padding: 20px;
+    color: #f1f1f1;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #1f1c2c, #1e1e2f);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    max-width: 90%; /* Ensures proper scaling on small devices */
+    margin: 20px auto; /* Center aligns for all screen sizes */
+}
+
+/* Headings Styling */
+#about h1,
+#about h2 {
+    text-align: center;
+    color: #ffd700;
+    margin-bottom: 15px;
+    font-size: 2rem; /* Scales properly across devices */
+}
+
+/* Paragraphs Styling */
+#about p {
+    margin: 10px 0;
+    text-align: justify;
+    font-size: 1rem; /* Responsive font size */
+}
+
+/* List Styling */
+#about ul {
+    margin: 15px 0;
+    padding-left: 20px;
+}
+
+#about ul li {
+    margin: 10px 0;
+    list-style: square;
+    font-size: 1rem; /* Responsive font size */
+}
+
+/* Small Screen Adjustments */
+@media screen and (max-width: 768px) {
+    #about {
+        padding: 15px; /* Reduce padding for smaller screens */
+        font-size: 0.9rem; /* Adjust font size */
+    }
+
+    #about h1,
+    #about h2 {
+        font-size: 1.5rem; /* Adjust heading size */
+    }
+}
+
+/* Very Small Devices (Phones in Portrait Mode) */
+@media screen and (max-width: 480px) {
+    #about {
+        padding: 10px; /* Minimal padding */
+        font-size: 0.85rem; /* Smaller font size */
+    }
+
+    #about h1,
+    #about h2 {
+        font-size: 1.2rem; /* Smaller heading size */
+    }
+
+    #about ul {
+        padding-left: 15px; /* Adjust padding for small devices */
+    }
+}
